@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendinha Interfocus</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"> </script>
+    <link rel="icon" type="imagem/png" href="./favicon-32x32.png" />
+    <script src="./script.js"></script>
+</head>
+<body>
+    <div id="tabs">
+        <ul>
+          <li><a href="#tabs-1">Cadastrar</a></li>
+          <li><a href="#tabs-2">Consultar clientes</a></li>
+        </ul>
+        <div id="tabs-1">
+        <div id="tela-cadastro">
+              <h1>Cadastre o cliente</h1>
+              <form  id="formulario">
+                <div class="Campo-Nome"> 
+                    <label for="Nome">Nome Completo</label>
+                    <input type="text" name="Nome" id="dividaNomeInput" placeholder="Digite o nome" required>
+                </div>
+                <div class="Campos distancia">
+                    <label for="CPF">CPF</label>
+                    <input type="number" name="CPF" id="dividaCpfInput" placeholder="Digite o CPF" required>
+                </div>
+                <div class="Campos">
+                    <label for="Telefone">Telefone</label>
+                    <input type="tel" name="Telefone" id="dividaTelefoneInput" placeholder="Digite o Telefone">
+                </div>
+                <div class="Campo-Email">
+                    <label for="Email">Email</label>
+                    <input type="email" name="Email" id="dividaEmailInput" placeholder="Digite o Email">
+                </div>
+                <div class="Campos distancia">
+                    <label for="Compras">Compras</label>
+                    <input type="text" name="Compras" id="dividaDescInput" placeholder="Adicione as compras realizadas">
+                </div>
+                <div class="Campos">
+                    <label for="Valor">Valor</label>
+                    <input type="number" name="Valor" id="dividaValorInput" placeholder="R$0,00" required>
+                </div>
+                <div class="Campos">
+                    <input onClick='adicionarDivida(event)' type="button" id="submit" value="Cadastrar">
+                </div>
+
+            </form>
+          </div>
+        </div>
+        <div id="tabs-2">
+            <div class="container-list">
+                <div class="dividas">
+                    <h4>Dívidas</h4>
+                    <div class="d-flex justify-content-between">
+                        <h5>
+                            <strong>Saldo devedor:&nbsp;</strong>
+                        </h5>
+                        <div id="boxsaldoDevedor">R$<h5 id="saldoDevedor">0,00</h5></div>
+                    </div>
+                </div>
+
+                <table class="table table-hover" id="dividasTable" >
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>CPF</th>
+                            <th>Telefone</th>
+                            <th>Email</th>
+                            <th>Compras</th>
+                            <th>Valor</th>
+                            <th>Pago</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+      </div>
+
+      <script>
+              $( function() {
+                  $( "#tabs" ).tabs();
+              } );
+      </script>
+</body>
+</html>
